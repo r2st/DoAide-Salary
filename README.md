@@ -1,45 +1,26 @@
-# DoAide Salary Calculator
+# SalaryDecode by DoAide
 
-CTC-to-take-home salary calculator for Indian professionals. Part of the [DoAide](https://doaide.com) suite.
+Free CTC to In-Hand Salary Calculator for Indian professionals. Compare old vs new tax regime, calculate exact take-home pay, and compare multiple job offers.
 
 ## Features
-
-- **CTC Breakdown Calculator** — Input CTC, get full salary breakdown with pie chart
-- **Tax Regime Comparator** — Side-by-side old vs new regime comparison
-- **HRA Exemption Calculator** — Calculate HRA tax exemption
-- **AI Tax-Saving Tips** — Personalized recommendations powered by AI
-- **Embeddable Widget** — Other sites can embed the calculator via `/embed`
+- CTC to In-Hand salary breakdown
+- Old vs New tax regime comparison (FY 2025-26)
+- Job offer comparator (2-3 offers side by side)
+- No login required — all calculations are client-side
 
 ## Tech Stack
+- Frontend: React 18 + Vite 5
+- Backend: FastAPI + PostgreSQL
+- Deployment: Hetzner VPS via systemd
 
-- **Backend**: FastAPI + Python (port 3038)
-- **Frontend**: React + Vite (port 3039)
-- **Database**: SQLite
-
-## Development
-
-### Backend
-
+## Quick Start
 ```bash
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --host 172.18.0.1 --port 3038 --reload
+# Frontend
+cd frontend && npm install && npm run dev
+
+# Backend
+cd backend && pip install -r requirements.txt && uvicorn app.main:app --port 3035
 ```
 
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-## Deployment
-
-Deployed at [salary.doaide.com](https://salary.doaide.com)
-
-```bash
-./deploy.sh
-```
+## License
+MIT
