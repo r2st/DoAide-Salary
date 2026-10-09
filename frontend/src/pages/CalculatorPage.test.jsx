@@ -2,13 +2,16 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import CalculatorPage from './CalculatorPage';
 
 function renderPage() {
   return render(
-    <BrowserRouter>
-      <CalculatorPage />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <CalculatorPage />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

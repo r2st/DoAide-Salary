@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ShareButtons from '../components/ShareButtons';
@@ -8,7 +9,9 @@ import LandingPage from '../pages/LandingPage';
 
 function wrap(component) {
   return render(
-    <BrowserRouter>{component}</BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>{component}</BrowserRouter>
+    </HelmetProvider>
   );
 }
 
