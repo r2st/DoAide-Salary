@@ -42,7 +42,7 @@ describe('ShareButtons', () => {
   it('renders WhatsApp and Twitter buttons', () => {
     render(<ShareButtons text="Test share" />);
     expect(screen.getByText('WhatsApp')).toBeInTheDocument();
-    expect(screen.getByText('X / Twitter')).toBeInTheDocument();
+    expect(screen.getByText('Twitter')).toBeInTheDocument();
   });
 
   it('opens WhatsApp share on click', () => {
@@ -59,7 +59,7 @@ describe('ShareButtons', () => {
   it('opens Twitter share on click', () => {
     const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
     render(<ShareButtons text="Hello world" />);
-    screen.getByText('X / Twitter').click();
+    screen.getByText('Twitter').click();
     expect(openSpy).toHaveBeenCalledWith(
       expect.stringContaining('twitter.com'),
       '_blank',
@@ -77,14 +77,14 @@ describe('LandingPage', () => {
   it('renders CTA buttons', () => {
     wrap(<LandingPage />);
     expect(screen.getByText('Calculate Now')).toBeInTheDocument();
-    expect(screen.getByText('Compare Offers')).toBeInTheDocument();
+    expect(screen.getByText('Hike Calculator')).toBeInTheDocument();
   });
 
   it('renders feature cards', () => {
     wrap(<LandingPage />);
     expect(screen.getByText('CTC Breakdown')).toBeInTheDocument();
     expect(screen.getByText('Old vs New Tax Regime')).toBeInTheDocument();
-    expect(screen.getByText('Offer Letter Comparator')).toBeInTheDocument();
+    expect(screen.getAllByText('Offer Letter Comparator').length).toBeGreaterThan(0);
   });
 
   it('renders how it works section', () => {

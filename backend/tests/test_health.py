@@ -19,7 +19,7 @@ async def test_tax_slabs():
         response = await ac.get("/api/v1/tax-slabs")
     assert response.status_code == 200
     data = response.json()
-    assert data["financial_year"] == "2025-26"
+    assert data["financial_year"] == "2026-27"
     assert len(data["new_regime"]["slabs"]) == 7
     assert len(data["old_regime"]["slabs"]) == 4
     assert data["cess_rate"] == 4

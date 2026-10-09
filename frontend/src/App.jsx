@@ -4,6 +4,9 @@ import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import CalculatorPage from './pages/CalculatorPage';
 import ComparatorPage from './pages/ComparatorPage';
+import SalaryHikePage from './pages/SalaryHikePage';
+import Blog from './pages/Blog';
+import BlogArticle from './pages/BlogArticle';
 
 export default function App() {
   return (
@@ -14,6 +17,9 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/compare" element={<ComparatorPage />} />
+          <Route path="/hike" element={<SalaryHikePage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
         </Routes>
       </main>
       <Footer />

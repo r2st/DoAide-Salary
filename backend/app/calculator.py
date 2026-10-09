@@ -45,18 +45,19 @@ OLD_REGIME_SLABS = [
     (float("inf"), 0.30),
 ]
 
-NEW_REGIME_SLABS_2024 = [
-    (300000, 0.00),
-    (700000, 0.05),
-    (1000000, 0.10),
-    (1200000, 0.15),
-    (1500000, 0.20),
+NEW_REGIME_SLABS = [
+    (400000, 0.00),
+    (800000, 0.05),
+    (1200000, 0.10),
+    (1600000, 0.15),
+    (2000000, 0.20),
+    (2400000, 0.25),
     (float("inf"), 0.30),
 ]
 
 
 def calculate_tax(taxable_income: float, regime: str) -> dict:
-    slabs = OLD_REGIME_SLABS if regime == "old" else NEW_REGIME_SLABS_2024
+    slabs = OLD_REGIME_SLABS if regime == "old" else NEW_REGIME_SLABS
     tax = 0.0
     prev_limit = 0
     breakdown = []
@@ -76,24 +77,15 @@ def calculate_tax(taxable_income: float, regime: str) -> dict:
             })
         prev_limit = limit
 
-    # New regime: rebate u/s 87A for income up to ₹7L (marginal relief up to ₹7.27L)
     rebate = 0.0
-    if regime == "new" and taxable_income <= 700000:
-        rebate = min(tax, 25000)
+    if regime == "new" and taxable_income <= 1200000:
+        rebate = min(tax, 60000)
     elif regime == "old" and taxable_income <= 500000:
         rebate = min(tax, 12500)
 
     tax_after_rebate = max(tax - rebate, 0)
     cess = tax_after_rebate * 0.04
     total_tax = tax_after_rebate + cess
-
-    # New regime: marginal relief for income slightly above 7L
-    if regime == "new" and 700000 < taxable_income <= 727778:
-        marginal_tax = taxable_income - 700000
-        if marginal_tax < total_tax:
-            total_tax = marginal_tax
-            cess = 0
-            tax_after_rebate = marginal_tax
 
     return {
         "taxable_income": round(taxable_income, 2),

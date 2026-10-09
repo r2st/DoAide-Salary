@@ -11,9 +11,9 @@ const articles = [
   },
   {
     slug: 'old-vs-new-tax-regime',
-    title: 'Old vs New Tax Regime 2024-25: Complete Guide with Examples',
+    title: 'Old vs New Tax Regime FY 2026-27: Complete Guide with Examples',
     excerpt: 'Detailed comparison of old and new income tax regime with real calculations. Find out which regime is better for your salary bracket.',
-    date: 'October 2024',
+    date: 'Updated April 2026',
     readTime: '10 min read',
   },
   {
@@ -31,11 +31,11 @@ export default function Blog() {
   return (
     <div className="page">
       <SEO
-        title="Blog"
-        description="Expert guides on salary negotiation, tax planning, HRA exemption, and financial planning for Indian professionals."
+        title="Salary & Tax Blog"
+        description="Expert guides on salary negotiation, tax planning FY 2026-27, HRA exemption, and financial planning for Indian professionals."
         path="/blog"
       />
-      <h1 className="page-title">Salary & Tax <span className="gold-text">Blog</span></h1>
+      <h1 className="page-title">Salary & Tax <span className="accent-text">Blog</span></h1>
       <p className="page-subtitle">Expert guides for Indian professionals</p>
 
       <div className="blog-list">

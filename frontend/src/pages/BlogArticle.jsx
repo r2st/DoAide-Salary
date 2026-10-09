@@ -41,24 +41,28 @@ const content = {
 
       <h2>Bonus: Calculate Your Real Take-Home</h2>
       <p>Use our <a href="/calculator">CTC Calculator</a> to see exactly how a salary change affects your monthly take-home. A ₹2 LPA increase in CTC might only translate to ₹10,000/month in hand after PF and tax. Know the real numbers before negotiating.</p>
+
+      <p>Also try our <a href="/hike">Salary Hike Calculator</a> to see exactly how much of a raise actually reaches your bank account.</p>
     `,
   },
   'old-vs-new-tax-regime': {
-    title: 'Old vs New Tax Regime 2024-25: Complete Guide with Examples',
+    title: 'Old vs New Tax Regime FY 2026-27: Complete Guide with Examples',
     body: `
       <h2>Overview</h2>
-      <p>Starting FY 2024-25, the new tax regime is the default for all taxpayers. You can still opt for the old regime if it benefits you. This guide breaks down both regimes with real examples to help you decide.</p>
+      <p>For FY 2026-27 (AY 2027-28), the new tax regime remains the default for all taxpayers. The tax slabs announced in Union Budget 2025 continue unchanged — Budget 2026 did not modify the rates. You can still opt for the old regime if it benefits you. This guide breaks down both regimes with real examples.</p>
 
-      <h2>New Regime Tax Slabs (FY 2024-25)</h2>
+      <h2>New Regime Tax Slabs (FY 2026-27)</h2>
       <table>
         <tr><th>Income Slab</th><th>Tax Rate</th></tr>
-        <tr><td>Up to ₹3,00,000</td><td>Nil</td></tr>
-        <tr><td>₹3,00,001 - ₹7,00,000</td><td>5%</td></tr>
-        <tr><td>₹7,00,001 - ₹10,00,000</td><td>10%</td></tr>
-        <tr><td>₹10,00,001 - ₹12,00,000</td><td>15%</td></tr>
-        <tr><td>₹12,00,001 - ₹15,00,000</td><td>20%</td></tr>
-        <tr><td>Above ₹15,00,000</td><td>30%</td></tr>
+        <tr><td>Up to ₹4,00,000</td><td>Nil</td></tr>
+        <tr><td>₹4,00,001 - ₹8,00,000</td><td>5%</td></tr>
+        <tr><td>₹8,00,001 - ₹12,00,000</td><td>10%</td></tr>
+        <tr><td>₹12,00,001 - ₹16,00,000</td><td>15%</td></tr>
+        <tr><td>₹16,00,001 - ₹20,00,000</td><td>20%</td></tr>
+        <tr><td>₹20,00,001 - ₹24,00,000</td><td>25%</td></tr>
+        <tr><td>Above ₹24,00,000</td><td>30%</td></tr>
       </table>
+      <p><strong>Standard Deduction:</strong> ₹75,000 | <strong>Rebate u/s 87A:</strong> Up to ₹60,000 for taxable income ≤ ₹12L (zero tax up to ~₹12.75L)</p>
 
       <h2>Old Regime Tax Slabs</h2>
       <table>
@@ -69,36 +73,25 @@ const content = {
         <tr><td>Above ₹10,00,000</td><td>30%</td></tr>
       </table>
 
+      <h2>Surcharge (Both Regimes)</h2>
+      <p>For high incomes, a surcharge applies on the tax amount:</p>
+      <table>
+        <tr><th>Total Income</th><th>Surcharge Rate</th></tr>
+        <tr><td>₹50L - ₹1Cr</td><td>10%</td></tr>
+        <tr><td>₹1Cr - ₹2Cr</td><td>15%</td></tr>
+        <tr><td>₹2Cr - ₹5Cr</td><td>25%</td></tr>
+        <tr><td>Above ₹5Cr (New Regime)</td><td>25%</td></tr>
+        <tr><td>Above ₹5Cr (Old Regime)</td><td>37%</td></tr>
+      </table>
+      <p>Plus 4% Health & Education Cess on tax + surcharge.</p>
+
       <h2>Key Differences</h2>
       <ul>
         <li><strong>Standard Deduction:</strong> ₹75,000 in new regime vs ₹50,000 in old</li>
-        <li><strong>80C/80D:</strong> Available only in old regime (up to ₹1.5L + ₹25K)</li>
+        <li><strong>80C/80D:</strong> Available only in old regime (up to ₹1.5L + ₹1L)</li>
+        <li><strong>NPS 80CCD(1B):</strong> Additional ₹50,000 only in old regime</li>
         <li><strong>HRA Exemption:</strong> Available only in old regime</li>
-        <li><strong>Rebate u/s 87A:</strong> ₹25,000 for income up to ₹7L (new) vs ₹12,500 for ₹5L (old)</li>
-      </ul>
-
-      <h2>Example 1: CTC ₹8 LPA (No Deductions)</h2>
-      <p>For someone earning ₹8 LPA with no investments or HRA claims:</p>
-      <ul>
-        <li><strong>New Regime Tax:</strong> ~₹23,400 (after standard deduction of ₹75K)</li>
-        <li><strong>Old Regime Tax:</strong> ~₹44,200 (only ₹50K standard deduction)</li>
-        <li><strong>Winner:</strong> New regime saves ₹20,800/year</li>
-      </ul>
-
-      <h2>Example 2: CTC ₹15 LPA (With ₹3L Deductions)</h2>
-      <p>For someone earning ₹15 LPA with ₹1.5L in 80C, ₹25K in 80D, ₹1L HRA exemption:</p>
-      <ul>
-        <li><strong>New Regime Tax:</strong> ~₹1,04,000</li>
-        <li><strong>Old Regime Tax:</strong> ~₹93,600</li>
-        <li><strong>Winner:</strong> Old regime saves ₹10,400/year</li>
-      </ul>
-
-      <h2>Example 3: CTC ₹25 LPA (With Maximum Deductions)</h2>
-      <p>For someone earning ₹25 LPA with ₹1.5L 80C, ₹50K 80D, ₹2L HRA, ₹50K NPS:</p>
-      <ul>
-        <li><strong>New Regime Tax:</strong> ~₹2,96,400</li>
-        <li><strong>Old Regime Tax:</strong> ~₹2,38,680</li>
-        <li><strong>Winner:</strong> Old regime saves ₹57,720/year</li>
+        <li><strong>Rebate u/s 87A:</strong> ₹60,000 for income up to ₹12L (new) vs ₹12,500 for ₹5L (old)</li>
       </ul>
 
       <h2>When to Choose Which?</h2>
@@ -115,10 +108,11 @@ const content = {
         <li>You claim HRA exemption of ₹1L+ per year</li>
         <li>You invest the full ₹1.5L in 80C instruments</li>
         <li>You have a home loan (Section 24 interest deduction)</li>
+        <li>You contribute to NPS (additional ₹50K under 80CCD)</li>
         <li>Your total deductions exceed ₹3-4 lakhs</li>
       </ul>
 
-      <p>Not sure? Use our <a href="/compare">Tax Regime Comparator</a> to see the exact numbers for your salary.</p>
+      <p>Not sure? Use our <a href="/calculator">CTC Calculator</a> to see the exact numbers for your salary under both regimes.</p>
     `,
   },
   'hra-exemption-guide': {
@@ -174,15 +168,7 @@ const content = {
         <li><strong>Forgetting PAN?</strong> Not providing landlord's PAN for rent above ₹1L/year can lead to HRA claim rejection</li>
       </ul>
 
-      <h2>Maximizing Your HRA Benefit</h2>
-      <ol>
-        <li>Restructure your salary to increase basic+HRA (talk to HR)</li>
-        <li>Keep all rent receipts and agreements organized</li>
-        <li>If your rent is high, negotiate for a higher HRA component in your CTC</li>
-        <li>Consider the old tax regime if your HRA exemption is substantial</li>
-      </ol>
-
-      <p>Use our <a href="/hra">HRA Calculator</a> to find your exact exemption amount.</p>
+      <p>Use our <a href="/calculator">CTC Calculator</a> with the rent field to see your exact HRA exemption and how it affects your take-home salary.</p>
     `,
   },
 };
@@ -213,8 +199,10 @@ export default function BlogArticle() {
           headline: article.title,
           description: meta?.excerpt,
           datePublished: '2024-10-01',
-          author: { '@type': 'Organization', name: 'DoAide' },
-          publisher: { '@type': 'Organization', name: 'DoAide' },
+          dateModified: '2026-04-01',
+          author: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
+          publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
+          mainEntityOfPage: `https://salary.doaide.com/blog/${slug}`,
         }}
       />
       <div className="blog-content">

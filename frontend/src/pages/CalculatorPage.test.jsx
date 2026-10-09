@@ -23,7 +23,7 @@ describe('CalculatorPage', () => {
     renderPage();
     expect(screen.getByLabelText(/Annual CTC/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/City Type/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Age/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/State/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/80C Deductions/i)).toBeInTheDocument();
   });
 
@@ -70,7 +70,7 @@ describe('CalculatorPage', () => {
     fireEvent.change(ctcInput, { target: { value: '1500000' } });
     fireEvent.click(screen.getByRole('button', { name: /Calculate/i }));
 
-    expect(screen.getByText('New Regime (FY 2025-26)')).toBeInTheDocument();
+    expect(screen.getByText('New Regime (FY 2026-27)')).toBeInTheDocument();
     expect(screen.getByText('Old Regime')).toBeInTheDocument();
   });
 
@@ -96,7 +96,7 @@ describe('CalculatorPage', () => {
     fireEvent.click(screen.getByRole('button', { name: /Calculate/i }));
 
     expect(screen.getByText('WhatsApp')).toBeInTheDocument();
-    expect(screen.getByText('X / Twitter')).toBeInTheDocument();
+    expect(screen.getByText('Twitter')).toBeInTheDocument();
   });
 
   it('changes HRA label when city type changes', () => {

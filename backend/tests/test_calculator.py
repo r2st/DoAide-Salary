@@ -79,7 +79,7 @@ def test_effective_tax_rate():
 
 
 def test_tax_new_regime_slabs():
-    tax = calculate_tax(1000000, "new")
+    tax = calculate_tax(1500000, "new")
     assert tax["total_tax"] > 0
     assert len(tax["slab_breakdown"]) > 0
 
@@ -91,7 +91,7 @@ def test_tax_old_regime_slabs():
 
 
 def test_tax_rebate_new_regime():
-    tax = calculate_tax(700000, "new")
+    tax = calculate_tax(1200000, "new")
     assert tax["total_tax"] == 0
 
 
@@ -193,3 +193,49 @@ def test_da_included():
     inp = CTCInput(annual_ctc=1200000, da_pct_of_basic=10)
     result = calculate_ctc_breakdown(inp)
     assert result["components"]["dearness_allowance"] == 48000
+
+
+def test_new_regime_slabs_fy2026_27():
+    """FY 2026-27 new regime: 0-4L nil, 4-8L 5%, 8-12L 10%, etc."""
+    tax = calculate_tax(800000, "new")
+    # 0-4L: 0, 4-8L: 20000
+    assert tax["tax_before_rebate"] == 20000
+
+
+def test_new_regime_rebate_12l():
+    """Rebate u/s 87A: full rebate for taxable income up to 12L in new regime."""
+    tax = calculate_tax(1200000, "new")
+    assert tax["rebate"] == 60000
+    assert tax["total_tax"] == 0
+
+
+def test_new_regime_no_rebate_above_12l():
+    tax = calculate_tax(1300000, "new")
+    assert tax["rebate"] == 0
+    # 0-4L: 0, 4-8L: 20000, 8-12L: 40000, 12-13L: 15000 = 75000
+    assert tax["tax_after_rebate"] == 75000
+
+
+def test_new_regime_30_pct_slab():
+    """Test the 30% slab above 24L."""
+    tax = calculate_tax(2500000, "new")
+    # 0-4: 0, 4-8: 20k, 8-12: 40k, 12-16: 60k, 16-20: 80k, 20-24: 100k, 24-25: 30k = 330k
+    assert tax["tax_before_rebate"] == 330000
+
+
+def test_old_regime_slabs_unchanged():
+    """Old regime slabs: 0-2.5L nil, 2.5-5L 5%, 5-10L 20%, 10L+ 30%."""
+    tax = calculate_tax(1000000, "old")
+    # 0-2.5: 0, 2.5-5: 12500, 5-10: 100000 = 112500
+    assert tax["tax_before_rebate"] == 112500
+
+
+def test_hra_exemption_zero_rent():
+    inp = HRAInput(
+        basic_salary_annual=480000,
+        hra_received_annual=240000,
+        rent_paid_annual=1,
+        metro_city=True,
+    )
+    result = calculate_hra_exemption(inp)
+    assert result["hra_exemption"] >= 0
