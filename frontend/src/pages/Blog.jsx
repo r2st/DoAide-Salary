@@ -23,6 +23,27 @@ const articles = [
     date: 'October 2024',
     readTime: '7 min read',
   },
+  {
+    slug: 'ctc-vs-in-hand-salary',
+    title: 'CTC vs In-Hand Salary 2026: How to Calculate Your Take-Home Pay',
+    excerpt: 'Understand the difference between CTC and in-hand salary with a step-by-step calculation guide. Learn which components reduce your take-home pay and how to maximize it.',
+    date: 'October 2026',
+    readTime: '9 min read',
+  },
+  {
+    slug: 'salary-slip-components-explained',
+    title: 'Salary Slip Components Explained: Basic, HRA, DA, and More',
+    excerpt: 'A complete guide to every component on your salary slip — from basic pay and HRA to PF, professional tax, and gratuity. Know what each line item means for your finances.',
+    date: 'October 2026',
+    readTime: '10 min read',
+  },
+  {
+    slug: 'income-tax-on-salary-2026-27',
+    title: 'Income Tax on Salary 2026-27: Complete Calculation Guide',
+    excerpt: 'Step-by-step guide to calculating income tax on your salary for FY 2026-27. Covers tax slabs, deductions, TDS, and filing tips under both old and new regimes.',
+    date: 'October 2026',
+    readTime: '11 min read',
+  },
 ];
 
 export { articles };
